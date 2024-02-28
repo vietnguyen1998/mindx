@@ -1,3 +1,6 @@
+
+
+
 class TreeNode {
     constructor(data) {
         this.data = data;
@@ -51,10 +54,10 @@ var trimBST = function (root, low, high) {
     }
     root.left = trimBST(root.left, low, high);
     root.right = trimBST(root.right, low, high);
-    if (root.data < low) {
+    if (root.val < low) {
         return root.right;
     }
-    if (root.data > high) {
+    if (root.val > high) {
         return root.left;
     }
     return root;
@@ -69,7 +72,6 @@ bst.insert(2)
 bst.insert(null)
 bst.insert(null)
 bst.insert(1)
-// bst.preorder(bst.root)
-bst.preorder(trimBST(bst.root, 1, 3))
-
+bst.preorder(bst.root)
+// let b = trimBST(bst.root, 1, 3)
 // console.log(bst)
